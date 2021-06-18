@@ -11,7 +11,7 @@ from matplotlib import pyplot
 # Generate program metrics
 class EvalMetrics:
 
-    def __init__(self, analytic, save_path=""):
+    def __init__(self, analytic, save_path="", format="png"):
         self.analytic = analytic
         self.save_path = save_path
 
@@ -70,4 +70,12 @@ class EvalMetrics:
         pyplot.legend()
         # show the plot
         pyplot.show()
-        pyplot.savefig(self.save_path + '/' + self.analytic + "_ROC.pdf")
+
+        ext =".png"
+
+        if self.format == "pdf":
+            ext = ".pdf"
+        elif self.format == "eps":
+            ext = ".eps"
+
+        pyplot.savefig(self.save_path + '/' + self.analytic + "_ROC"+ext)
