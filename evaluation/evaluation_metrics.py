@@ -14,6 +14,7 @@ class EvalMetrics:
     def __init__(self, analytic, save_path="", format="png"):
         self.analytic = analytic
         self.save_path = save_path
+        self.save_format = format
 
     def calculate_program_metrics(self, far, pd):
 
@@ -71,11 +72,11 @@ class EvalMetrics:
         # show the plot
         pyplot.show()
 
-        ext =".png"
-
-        if self.format == "pdf":
+        if self.save_format == "pdf":
             ext = ".pdf"
-        elif self.format == "eps":
+        elif self.save_format == "eps":
             ext = ".eps"
+        elif self.save_format == "png":
+            ext = ".png"
 
         pyplot.savefig(self.save_path + '/' + self.analytic + "_ROC"+ext)
