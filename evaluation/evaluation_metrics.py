@@ -11,8 +11,9 @@ from matplotlib import pyplot
 # Generate program metrics
 class EvalMetrics:
 
-    def __init__(self, analytic):
+    def __init__(self, analytic, save_path=""):
         self.analytic = analytic
+        self.save_path = save_path
 
     def calculate_program_metrics(self, far, pd):
 
@@ -69,4 +70,4 @@ class EvalMetrics:
         pyplot.legend()
         # show the plot
         pyplot.show()
-        pyplot.savefig('ROC.pdf')
+        pyplot.savefig(self.save_path + '/' + self.analytic + "_ROC.pdf")
