@@ -61,7 +61,7 @@ class EvalMetrics:
 
         # plot the roc curve for the model
         pyplot.plot(lr_fpr, lr_tpr, marker='.', label=self.analytic)
-        pyplot.plot(eq_fpr, eq_tpr, marker='-', label='Random Chance')
+        pyplot.plot(eq_fpr, eq_tpr, marker='.', label='Random Chance')
         # axis labels
 
         pyplot.xlabel('Probability of False Alarm')
