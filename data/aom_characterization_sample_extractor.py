@@ -21,9 +21,9 @@ from pathlib import Path
 
 print(aomsdk.__version__)
 
-path = "/home/tskunara/Eval 3.2/Eval 3.2.1/"
-directory = "/home/tskunara/Eval2/Text_And_Images/*.tar.gz"
-tmpdir = "/home/tskunara/Eval 3.2/Eval 3.2.1/temp/"
+path = ""  #Path that contains all the data folders after unzip
+directory = ""  # Could be any path when starting
+tmpdir = "/temp/" # Temp directory to unzip tar files - don't make this folder in the same path as data folders
 
 # label = 1
 
